@@ -1,4 +1,4 @@
-package github/mvanyushkin/LinkedList
+package LinkedList
 
 type ListItem struct {
 	prev  *ListItem
