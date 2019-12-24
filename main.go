@@ -1,8 +1,8 @@
 package main
 
 import (
-	LinkedList "github/mvanyushkin/LinkedList"
 	"fmt"
+	LinkedList "github/mvanyushkin/LinkedList/linkedlist"
 )
 
 func main() {
