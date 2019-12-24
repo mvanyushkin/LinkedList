@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	LinkedList "github/mvanyushkin/LinkedList/linkedlist"
+	LinkedList "github.com/mvanyushkin/LinkedList/linkedlist"
 )
 
 func main() {
