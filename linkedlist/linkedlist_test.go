@@ -1,4 +1,4 @@
-package LinkedList
+package github/mvanyushkin/LinkedList
 
 import (
 	"github.com/stretchr/testify/assert"

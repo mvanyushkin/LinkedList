@@ -1,4 +1,4 @@
-module github/vanyushkin
+module github/mvanyushkin/LinkedList
 
 go 1.13
 
