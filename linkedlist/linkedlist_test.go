@@ -7,7 +7,7 @@ import (
 
 func TestWhenHasSingleElement(t *testing.T) {
 	list := New()
-	list.PushFront(0)
+	list.PushBack(0)
 	assert.Equal(t, uint64(1), list.Len())
 	assert.Equal(t, list.First().Value(), list.Last().Value())
 }
@@ -21,12 +21,12 @@ func TestWhenEmpty(t *testing.T) {
 
 func TestWhenNullsHasBeenPassed(t *testing.T) {
 	list := New()
-	list.PushBack(nil)
-	list.PushBack(nil)
-	list.PushBack(nil)
 	list.PushFront(nil)
 	list.PushFront(nil)
 	list.PushFront(nil)
+	list.PushBack(nil)
+	list.PushBack(nil)
+	list.PushBack(nil)
 
 	for counter := 0; uint64(counter) < list.Len(); counter++ {
 		assert.Nil(t, list.ElementAt(uint64(counter)).Value())
@@ -39,12 +39,12 @@ func TestWhenNullsHasBeenPassed(t *testing.T) {
 
 func TestWhenRegularChainHasBeenPassed(t *testing.T) {
 	list := New()
-	list.PushFront(0)
-	list.PushFront(1)
-	list.PushFront(2)
-	list.PushFront(3)
-	list.PushBack(-1)
-	list.PushBack(-2)
+	list.PushBack(0)
+	list.PushBack(1)
+	list.PushBack(2)
+	list.PushBack(3)
+	list.PushFront(-1)
+	list.PushFront(-2)
 	assert.Equal(t, uint64(6), list.Len())
 	assert.Equal(t, -2, list.ElementAt(0).Value())
 	assert.Equal(t, -1, list.ElementAt(1).Value())
@@ -56,7 +56,7 @@ func TestWhenRegularChainHasBeenPassed(t *testing.T) {
 
 func TestWhenRemovingElement(t *testing.T) {
 	list := New()
-	list.PushFront(0)
+	list.PushBack(0)
 	assert.Equal(t, uint64(1), list.Len())
 	assert.Equal(t, list.First().Value(), list.Last().Value())
 }
