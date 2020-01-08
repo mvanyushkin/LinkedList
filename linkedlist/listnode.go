@@ -8,11 +8,19 @@ type ListItem struct {
 }
 
 func (item *ListItem) Prev() *ListItem {
-	return item.prev
+	if item.prev != nil && item.owner.headItem != item {
+		return item.prev
+	}
+
+	return nil
 }
 
 func (item *ListItem) Next() *ListItem {
-	return item.next
+	if item.next != nil && item.owner.headItem != item {
+		return item.next
+	}
+
+	return nil
 }
 
 func (item *ListItem) Value() interface{} {

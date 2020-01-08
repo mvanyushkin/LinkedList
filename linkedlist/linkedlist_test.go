@@ -60,3 +60,21 @@ func TestWhenRemovingElement(t *testing.T) {
 	assert.Equal(t, uint64(1), list.Len())
 	assert.Equal(t, list.First().Value(), list.Last().Value())
 }
+
+func TestWhenHasSinglePrevAndNextAreNull(t *testing.T) {
+	list := New()
+	list.PushBack(0)
+	assert.Equal(t, uint64(1), list.Len())
+	assert.Nil(t, list.First().Prev())
+	assert.Nil(t, list.First().Next())
+	assert.Nil(t, list.Last().Prev())
+	assert.Nil(t, list.Last().Next())
+
+	list = New()
+	list.PushFront(0)
+	assert.Equal(t, uint64(1), list.Len())
+	assert.Nil(t, list.First().Prev())
+	assert.Nil(t, list.First().Next())
+	assert.Nil(t, list.Last().Prev())
+	assert.Nil(t, list.Last().Next())
+}
