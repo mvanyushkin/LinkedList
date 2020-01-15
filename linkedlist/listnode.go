@@ -4,7 +4,7 @@ type ListItem struct {
 	prev  *ListItem
 	next  *ListItem
 	value interface{}
-	owner *LinkedList
+	owner *linkedList
 }
 
 func (item *ListItem) Prev() *ListItem {
@@ -16,7 +16,7 @@ func (item *ListItem) Prev() *ListItem {
 }
 
 func (item *ListItem) Next() *ListItem {
-	if item.next != nil && item.owner.headItem != item {
+	if item.next != nil && item.owner.headItem.prev != item {
 		return item.next
 	}
 
